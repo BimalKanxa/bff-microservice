@@ -1,13 +1,18 @@
-# Build stage
-FROM maven:3.9.6-eclipse-temurin-17 AS build
-WORKDIR /app
-COPY pom.xml .
-COPY src ./src
-RUN mvn clean package -DskipTests
+# -----------------------------
+# Dockerfile for BFF Service
+# -----------------------------
 
-# Run stage
+# Use lightweight Java 17 image
 FROM eclipse-temurin:17-jdk-alpine
+
+# Set working directory
 WORKDIR /app
-COPY --from=build /app/target/*.jar app.jar
-EXPOSE 8761
-ENTRYPOINT ["java","-jar","app.jar"]
+
+# Copy Maven build output
+COPY target/bff-service-*.jar app.jar
+
+# Expose port (Railway injects PORT automatically)
+EXPOSE 8080
+
+# Run the application
+ENTRYPOINT ["java", "-jar", "app.jar"]
