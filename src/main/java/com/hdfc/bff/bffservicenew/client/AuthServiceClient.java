@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
  */
 @FeignClient(
         name = "auth-service",
-        url = "${auth.service.url}"
+        url = "https://demo-authservice-hdfc-mvp.onrender.com"
 )
 public interface AuthServiceClient {
     @PostMapping("/api/auth/login")
