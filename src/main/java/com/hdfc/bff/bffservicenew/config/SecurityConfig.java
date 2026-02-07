@@ -26,7 +26,14 @@ public class SecurityConfig {
                 )
 
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/bff/login", "/health").permitAll()
+                        .requestMatchers(
+                                "/bff/*",
+                                "/bff/journeys/**",
+                                "/health",
+                                "/swagger-ui/**",
+                                "/v3/api-docs/**"
+                                )
+                        .permitAll()
                         .anyRequest().authenticated()
                 )
 
