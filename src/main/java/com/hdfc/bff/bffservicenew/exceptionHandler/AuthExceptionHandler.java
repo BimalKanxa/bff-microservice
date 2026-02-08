@@ -29,8 +29,8 @@ public class AuthExceptionHandler extends RuntimeException{
 
         Map<String, Object> response = new HashMap<>();
         response.put("timestamp", LocalDateTime.now());
-        response.put("error", "AUTH_SERVICE_ERROR");
-        response.put("message", "Authentication service error");
+        response.put("error", "AUTH_FAILED");
+        response.put("message", "Invalid Credentials");
         response.put("details", ex.getMessage());
         response.put("status", status.value());
 
