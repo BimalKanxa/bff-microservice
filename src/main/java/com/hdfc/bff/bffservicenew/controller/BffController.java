@@ -23,7 +23,7 @@ public class BffController {
      * Client -> BFF -> Auth Service
      */
 
-    @CrossOrigin("*")
+    @CrossOrigin(origins = "https://hdfc-support-app-l1vcw34qd-mahmudul-hassans-projects-566e9814.vercel.app")
     @PostMapping("/login")
     public ResponseEntity<AuthLoginResponse> login(@RequestBody LoginRequest request) {
 
@@ -32,7 +32,7 @@ public class BffController {
         return ResponseEntity.ok(response);
     }
 
-    @CrossOrigin("*")
+    @CrossOrigin(origins = "*")
     @GetMapping("/health")
     public String healthCheck(){
         return "BFF is Running Healthy";
