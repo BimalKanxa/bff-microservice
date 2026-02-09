@@ -27,6 +27,7 @@ public class JourneyController {
     /**
      * Get journey list for a customer
      */
+    @CrossOrigin("*")
     @GetMapping
     public ResponseEntity<Map<String, Object>> getJourneyList(
             @RequestParam String customerId
@@ -39,6 +40,8 @@ public class JourneyController {
     /**
      * Get journey stages by journeyId
      */
+
+    @CrossOrigin("*")
     @GetMapping("/{journeyId}/stages")
     public ResponseEntity<Map<String, Object>> getJourneyStages(
             @PathVariable String journeyId
