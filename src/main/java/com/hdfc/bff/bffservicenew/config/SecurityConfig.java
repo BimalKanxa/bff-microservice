@@ -31,7 +31,11 @@ public class SecurityConfig {
                                 "/bff/journeys/**",
                                 "/health",
                                 "/swagger-ui/**",
-                                "/v3/api-docs/**"
+                                "/v3/api-docs/**",
+                            "https://hdfc-support-app-l1vcw34qd-mahmudul-hassans-projects-566e9814.vercel.app/*",
+                            "https://hdfc-support-app-l1vcw34qd-mahmudul-hassans-projects-566e9814.vercel.app/**",
+                            "https://hdfc-support-app-l1vcw34qd-mahmudul-hassans-projects-566e9814.vercel.app",
+                            "https://hdfc-support-app-l1vcw34qd-mahmudul-hassans-projects-566e9814.vercel.app/bff/login"
                                 )
                         .permitAll()
                         .anyRequest().authenticated()
