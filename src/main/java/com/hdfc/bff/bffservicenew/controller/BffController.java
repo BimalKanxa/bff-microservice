@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/bff")
+
 public class BffController {
     private final AuthServiceClient authServiceClient;
 
@@ -21,6 +22,8 @@ public class BffController {
      * Login endpoint
      * Client -> BFF -> Auth Service
      */
+
+    @CrossOrigin("*")
     @PostMapping("/login")
     public ResponseEntity<AuthLoginResponse> login(@RequestBody LoginRequest request) {
 
@@ -29,6 +32,7 @@ public class BffController {
         return ResponseEntity.ok(response);
     }
 
+    @CrossOrigin("*")
     @GetMapping("/health")
     public String healthCheck(){
         return "BFF is Running Healthy";
