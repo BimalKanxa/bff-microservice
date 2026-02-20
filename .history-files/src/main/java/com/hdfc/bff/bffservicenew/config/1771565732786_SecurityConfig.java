@@ -32,7 +32,6 @@ public class SecurityConfig {
                                 "/health",
                                 "/swagger-ui/**",
                                 "/v3/api-docs/**",
-                                "/actuator/*"
                             "/https://hdfc-support-app-l1vcw34qd-mahmudul-hassans-projects-566e9814.vercel.app/*",
                             "/https://hdfc-support-app-l1vcw34qd-mahmudul-hassans-projects-566e9814.vercel.app/**",
                             "/https://hdfc-support-app-l1vcw34qd-mahmudul-hassans-projects-566e9814.vercel.app",
