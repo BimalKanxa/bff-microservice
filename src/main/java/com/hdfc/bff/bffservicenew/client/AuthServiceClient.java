@@ -6,17 +6,13 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-/**
- * AuthServiceClient
- * ------------------
- * OpenFeign client for communicating with Auth Service.
- */
+
 @FeignClient(
         name = "auth-service",
-        url = "https://demo-authservice-hdfc-mvp.onrender.com"
+        url = "${auth.service.url}"
 )
 public interface AuthServiceClient {
     @PostMapping("/api/auth/login")
-//    LoginResponse login(@RequestBody LoginRequest request);
+
     AuthLoginResponse login(@RequestBody LoginRequest request);
 }
