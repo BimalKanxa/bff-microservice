@@ -33,6 +33,10 @@ public class SecurityConfig {
                                 "/swagger-ui/**",
                                 "/v3/api-docs/**",
                                 "/actuator/*"
+                            "/https://hdfc-support-app-l1vcw34qd-mahmudul-hassans-projects-566e9814.vercel.app/*",
+                            "/https://hdfc-support-app-l1vcw34qd-mahmudul-hassans-projects-566e9814.vercel.app/**",
+                            "/https://hdfc-support-app-l1vcw34qd-mahmudul-hassans-projects-566e9814.vercel.app",
+                            "/https://hdfc-support-app-l1vcw34qd-mahmudul-hassans-projects-566e9814.vercel.app/bff/login"
                                 )
                         .permitAll()
                         .anyRequest().authenticated()
@@ -54,7 +58,7 @@ public class SecurityConfig {
     @Bean
     public org.springframework.web.cors.CorsConfigurationSource corsConfigurationSource() {
         org.springframework.web.cors.CorsConfiguration configuration = new org.springframework.web.cors.CorsConfiguration();
-        configuration.setAllowedOriginPatterns(java.util.List.of("http://localhost:*"));
+        configuration.setAllowedOriginPatterns(java.util.List.of("*"));
         configuration.setAllowedMethods(java.util.List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(java.util.List.of("*"));
         configuration.setAllowCredentials(true);

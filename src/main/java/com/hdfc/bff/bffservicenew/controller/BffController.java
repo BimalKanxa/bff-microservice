@@ -14,6 +14,7 @@ import org.slf4j.LoggerFactory;
 
 @RestController
 @RequestMapping("/bff")
+
 public class BffController {
 
     private static final Logger logger =
@@ -25,6 +26,8 @@ public class BffController {
         this.authBffService = authBffService;
     }
 
+
+    @CrossOrigin(origins = "https://hdfc-support-app-l1vcw34qd-mahmudul-hassans-projects-566e9814.vercel.app")
     @PostMapping("/login")
     public ResponseEntity<BffLoginResponse> login(
             @Valid @RequestBody LoginRequest request,
@@ -42,5 +45,11 @@ public class BffController {
                 response.isSuccess());
 
         return ResponseEntity.ok(response);
+    }
+
+    @CrossOrigin(origins = "*")
+    @GetMapping("/health")
+    public String healthCheck(){
+        return "BFF is Running Healthy";
     }
 }
