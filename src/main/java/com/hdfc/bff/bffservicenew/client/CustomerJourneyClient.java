@@ -1,8 +1,12 @@
 package com.hdfc.bff.bffservicenew.client;
 
 
+import com.hdfc.bff.bffservicenew.dto.JourneyListRequest;
+import com.hdfc.bff.bffservicenew.dto.JourneyStagesRequest;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Map;
@@ -13,14 +17,10 @@ import java.util.Map;
 )
 public interface CustomerJourneyClient {
 
-    @GetMapping("/api/v1/get-journey-list")
-    Map<String, Object> getJourneyList(
-            @RequestParam("customerId") String customerId
-    );
+    @PostMapping("/api/v1/journeys")
+   Object getJourneyList(@RequestBody JourneyListRequest request);
 
-    @GetMapping("/api/v1/get-stages")
-    Map<String, Object> getJourneyStages(
-            @RequestParam("journeyId") String journeyId
-    );
+    @PostMapping("/api/v1/journeys/stages")
+   Object getJourneyStages(@RequestBody JourneyStagesRequest request);
 
 }

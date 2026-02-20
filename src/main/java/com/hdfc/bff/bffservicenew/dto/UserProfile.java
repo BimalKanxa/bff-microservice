@@ -1,9 +1,10 @@
 package com.hdfc.bff.bffservicenew.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
 
 
-
+@Data
     public class UserProfile {
 
         @JsonProperty("email")
