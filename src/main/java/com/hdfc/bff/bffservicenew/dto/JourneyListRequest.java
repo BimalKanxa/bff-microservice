@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class JourneyListRequest {
 
-    private String correlationId;
+    private String customerId;
     private int page;
     private int pageSize;
     private String order;
